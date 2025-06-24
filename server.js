@@ -14,7 +14,8 @@ wss.on('connection', function connection(ws) {
     // Reenvía el mensaje a todos los clientes conectados (broadcast)
     wss.clients.forEach(function each(client) {
       if (client.readyState === WebSocket.OPEN) {
-        client.send(message);
+        client.send(message.toString());
+
       }
     });
   });
